@@ -9,4 +9,10 @@ fish_add_path $HOME/.cargo/bin
 alias ls 'eza -l'
 alias ff fastfetch
 
-mise activate fish | source
+if command -q mise
+    mise activate fish | source
+end
+
+if command -q starship
+    starship init fish | source
+end
